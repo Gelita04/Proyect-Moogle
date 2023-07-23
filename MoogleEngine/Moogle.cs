@@ -143,6 +143,16 @@ public static class Moogle
             score[i] = Score_Docs[i];
         }
         SearchItem[] Almost_Last = Extras.Result(titles, score, snippet, Return_Documents);
+        //creamos el string que sera la sugerencia
+        string Suggestion;
+        int Dist;
+        for (int i = 0; i < Query.Count; i++)
+        {
+            for (int j = 0; j < Vocabulary.Count; j++)
+            {
+                Dist = Extras.Words_Similitud(Query[i], Vocabulary[j]);
+            }
+        }
 
 
 
@@ -163,6 +173,6 @@ public static class Moogle
 
 
 
-        return new SearchResult(Almost_Last,);
+        return new SearchResult(Almost_Last, Suggestion = "");
     }
 }
